@@ -24,6 +24,7 @@ resource "aws_instance" "vprofile-bastion" {
   }
 
   connection {
+    type        = "ssh"
     user        = var.USERNAME
     private_key = file(var.PRIV_KEY_PATH)
     host        = self.public_ip
